@@ -421,6 +421,93 @@
     }
     .card p { margin: 0; color: #607487; font-size: 14px; }
 
+    .case-highlight {
+      padding: 0 0 86px;
+      background: linear-gradient(180deg, #ffffff 0%, #f5f8fb 100%);
+    }
+    .case-highlight-card {
+      display: grid;
+      grid-template-columns: 1.04fr .96fr;
+      gap: 32px;
+      align-items: center;
+      background: #fff;
+      border: 1px solid rgba(24,166,200,.22);
+      border-radius: 30px;
+      padding: 34px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .case-highlight-card:before {
+      content:"";
+      position:absolute;
+      inset:auto -90px -120px auto;
+      width: 260px;
+      height: 260px;
+      border-radius: 999px;
+      background: rgba(24,166,200,.10);
+      pointer-events:none;
+    }
+    .case-highlight .case-kicker {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(24,166,200,.10);
+      color: var(--cyan-dark);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+    .case-highlight h2 {
+      text-align:left;
+      font-size: clamp(25px, 2.6vw, 36px);
+      line-height: 1.28;
+    }
+    .case-highlight p {
+      margin: 16px 0 0;
+      color: #53687b;
+      font-size: 15.5px;
+      line-height: 1.9;
+    }
+    .case-highlight-actions {
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top: 24px;
+    }
+    .case-metrics {
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:14px;
+      position:relative;
+      z-index:1;
+    }
+    .case-metric {
+      background: #f8fbfd;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      min-height: 128px;
+    }
+    .case-metric strong {
+      display:block;
+      color: var(--navy);
+      font-size: 24px;
+      line-height: 1.25;
+      letter-spacing: -.025em;
+    }
+    .case-metric span {
+      display:block;
+      margin-top: 8px;
+      color: #607487;
+      font-size: 13px;
+      line-height: 1.6;
+      font-weight: 700;
+    }
+
+
     .flow-wrap {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -862,7 +949,7 @@
 
     @media (max-width: 980px) {
       .nav-links a:not(.btn) { display: none; }
-      .hero-grid, .flow-wrap, .effects, .security, .subsidy { grid-template-columns: 1fr; }
+      .hero-grid, .flow-wrap, .effects, .security, .subsidy, .case-highlight-card { grid-template-columns: 1fr; }
       .mock-wrap { min-height: auto; }
       .cards-grid { grid-template-columns: repeat(2, 1fr); }
       .industry-grid, .gallery-grid { grid-template-columns: repeat(2, 1fr); }
@@ -879,7 +966,9 @@
       .hero { padding: 46px 0 62px; }
       .hero-copy { font-size: 15px; }
       section { padding: 62px 0; }
-      .cards-grid, .industry-grid, .gallery-grid, .pricing-grid, .spec-grid, .security-grid { grid-template-columns: 1fr; }
+      .cards-grid, .industry-grid, .gallery-grid, .pricing-grid, .spec-grid, .security-grid, .case-metrics { grid-template-columns: 1fr; }
+      .case-highlight { padding: 0 0 58px; }
+      .case-highlight-card { padding: 24px; border-radius: 24px; }
       .screen-card { grid-template-rows: auto 1fr; min-height: auto; }
       .screen-shot { height: auto; min-height: 260px; }
       .mock-body { grid-template-columns: 1fr; }
@@ -972,6 +1061,28 @@
               <strong>印刷・配布・転記・回収を削減</strong>
               <small>紙図面運用からクラウド確認へ</small>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-highlight" id="case-study">
+      <div class="container">
+        <div class="case-highlight-card">
+          <div>
+            <div class="case-kicker">導入事例｜株式会社エス・イー・キタムラ様</div>
+            <h2>紙図面30万枚の現場が、もう紙には戻れなくなった理由</h2>
+            <p>品質管理・検証チームを中心にPDF_DXを導入。紙図面の印刷、仕分け、書き込み、スキャン、保管、機密書類の溶解処理まで含めたアナログな運用を見直しました。</p>
+            <div class="case-highlight-actions">
+              <a class="btn btn-primary" href="case-se-kitamura.html">導入事例を見る</a>
+              <a class="btn btn-secondary" href="#contact">導入相談をする</a>
+            </div>
+          </div>
+          <div class="case-metrics" aria-label="導入事例の主なポイント">
+            <div class="case-metric"><strong>年間約30万枚</strong><span>規模の紙使用量を大幅削減</span></div>
+            <div class="case-metric"><strong>設計・品質管理・経費</strong><span>3つの観点で業務改善を整理</span></div>
+            <div class="case-metric"><strong>確認履歴</strong><span>誰が何時何分に書いたかを可視化</span></div>
+            <div class="case-metric"><strong>クリーンルーム</strong><span>備え付けタブレットで図面確認へ</span></div>
           </div>
         </div>
       </div>
